@@ -4,7 +4,7 @@ import "./Tickets.css";
 
 const Tickets = ({ env }) => {
   const [tasks, setTasks] = useState([]);
-  const apiUrl = env === "dev" ? "http://localhost:3001/api/tickets" : "http://localhost:3002/api/tickets";
+  const apiUrl = env === "dev" ? `http://${window.location.hostname}:3001/api/tickets` : `http://${window.location.hostname}:3002/api/tickets`;
   useEffect(() => {
     axios
       .get(apiUrl)

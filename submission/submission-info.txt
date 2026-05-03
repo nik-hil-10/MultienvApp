@@ -1,0 +1,10 @@
+Student Name: Nikhil Mishra
+Repository URL: https://github.com/nik-hil-10/MultienvApp.git
+Deployment Status: Working
+Access URLs:
+- Development: http://13.233.193.219:3000/dev
+- Production: http://13.233.193.219:3000/prod
+- Frontend: http://13.233.193.219:3000
+Date of Submission: 04-05-2026
+
+*Note: To prevent unexpected AWS billing charges, the EC2 instance hosting this application has been terminated. Please review the attached screenshots and evidence in the README for verification of the working deployment.*

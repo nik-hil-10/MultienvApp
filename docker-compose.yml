@@ -1,0 +1,38 @@
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend-dev
+      - backend-prod
+
+  backend-dev:
+    build:
+      context: ./backend/dev
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/devdb
+      - FLASK_ENV=development
+      - PORT=3001
+
+  backend-prod:
+    build:
+      context: ./backend/prod
+    ports:
+      - "3002:3002"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/proddb
+      - FLASK_ENV=production
+      - PORT=3002
